@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Designer — Tadian Ahmad Azeemi | Graphic Design Portfolio</title>
+  <meta name="description"
+    content="Portfolio of Tadian Ahmad Azeemi — graphic designer specializing in logo design, brand identity, motion graphics, and print design using Adobe Illustrator and After Effects." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-logo">Designer</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#portfolio">Work</a></li>
+      <li><a href="#motion">Motion</a></li>
+      <li><a href="#contact" class="nav-cta">Let's Talk</a></li>
+    </ul>
+    <div class="nav-hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-blob hero-blob-1"></div>
+    <div class="hero-blob hero-blob-2"></div>
+    <div class="hero-blob hero-blob-3"></div>
+    <div class="hero-content">
+      <div class="hero-badge" id="heroBadge">
+        <span class="hero-badge-dot"></span>
+        Available for projects
+      </div>
+      <h1 class="hero-title" id="heroTitle">
+        <span class="hero-title-line">Crafting</span>
+        <span class="hero-title-line gradient-text">Visual</span>
+        <span class="hero-title-line">Stories</span>
+      </h1>
+      <p class="hero-sub" id="heroSub">
+        <em>Tadian Ahmad Azeemi</em> — Graphic Designer specializing in<br />
+        Logo Design &amp; Brand Identity · Print &amp; Flex · Motion Graphics
+      </p>
+      <div class="hero-actions" id="heroActions">
+        <a href="#portfolio" class="btn btn-primary">View My Work</a>
+        <a href="#motion" class="btn btn-ghost">Watch Animations</a>
+      </div>
+    </div>
+
+    <!-- Floating Software Icons -->
+    <div class="floating-tools">
+      <!-- Adobe Illustrator -->
+      <div class="float-icon float-icon-1" title="Adobe Illustrator">
+        <img src="Icons_svg_web_resources/adobe-illustrator-icon.svg" width="15" height="15" alt="Illustrator">
+      </div>
+      <!-- After Effects -->
+      <div class="float-icon float-icon-2" title="After Effects">
+        <img src="Icons_svg_web_resources/adobe-after-effects-icon.svg" width="15" height="15" alt="After Effects">
+      </div>
+      <!-- Photoshop -->
+      <div class="float-icon float-icon-3" title="Adobe Photoshop">
+        <img src="Icons_svg_web_resources/adobe-photoshop-icon.svg" width="15" height="15" alt="Photoshop">
+      </div>
+      <!-- CMYK/Print -->
+      <div class="float-icon float-icon-4" title="CMYK Print Design">
+        <img src="Icons_svg_web_resources/cmyk-color-icon.svg" width="15" height="15" alt="CMYK">
+      </div>
+      <!-- Canva -->
+      <div class="float-icon float-icon-5" title="Canva">
+        <img src="Icons_svg_web_resources/canva-icon.svg" width="15" height="15" alt="Canva">
+      </div>
+    </div>
+
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-section" id="about">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card reveal-up">
+          <div class="stat-ring-wrap">
+            <svg class="stat-ring" viewBox="0 0 120 120">
+              <circle class="stat-ring-bg" cx="60" cy="60" r="52" />
+              <circle class="stat-ring-fill" cx="60" cy="60" r="52" data-percent="90" />
+            </svg>
+            <div class="stat-ring-inner">
+              <div class="stat-number" data-target="41">0</div>
+            </div>
+          </div>
+          <div class="stat-label">Projects Completed</div>
+          <div class="stat-bar">
+            <div class="stat-bar-fill" data-width="90"></div>
+          </div>
+        </div>
+        <div class="stat-card reveal-up">
+          <div class="stat-ring-wrap">
+            <svg class="stat-ring" viewBox="0 0 120 120">
+              <circle class="stat-ring-bg" cx="60" cy="60" r="52" />
+              <circle class="stat-ring-fill" cx="60" cy="60" r="52" data-percent="75" />
+            </svg>
+            <div class="stat-ring-inner">
+              <div class="stat-number" data-target="21">0</div>
+            </div>
+          </div>
+          <div class="stat-label">Logos Designed</div>
+          <div class="stat-bar">
+            <div class="stat-bar-fill" data-width="75"></div>
+          </div>
+        </div>
+        <div class="stat-card reveal-up">
+          <div class="stat-ring-wrap">
+            <svg class="stat-ring" viewBox="0 0 120 120">
+              <circle class="stat-ring-bg" cx="60" cy="60" r="52" />
+              <circle class="stat-ring-fill" cx="60" cy="60" r="52" data-percent="40" />
+            </svg>
+            <div class="stat-ring-inner">
+              <div class="stat-number" data-target="2">0</div>
+            </div>
+          </div>
+          <div class="stat-label">Years Experience</div>
+          <div class="stat-bar">
+            <div class="stat-bar-fill" data-width="40"></div>
+          </div>
+        </div>
+        <div class="stat-card reveal-up">
+          <div class="stat-ring-wrap">
+            <svg class="stat-ring" viewBox="0 0 120 120">
+              <circle class="stat-ring-bg" cx="60" cy="60" r="52" />
+              <circle class="stat-ring-fill" cx="60" cy="60" r="52" data-percent="30" />
+            </svg>
+            <div class="stat-ring-inner">
+              <div class="stat-number" data-target="2">0</div>
+            </div>
+          </div>
+          <div class="stat-label">Motion Graphics</div>
+          <div class="stat-bar">
+            <div class="stat-bar-fill" data-width="30"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-section">
+    <div class="container about-grid">
+      <div class="about-text reveal-left">
+        <p class="section-label">About Me</p>
+        <h2 class="section-title">Where <em>Creativity</em><br />Meets <span class="gradient-text">Precision</span></h2>
+        <p class="about-desc">I'm Tadian Ahmad Azeemi, a graphic designer who transforms ideas into powerful visual
+          identities. With a sharp eye for detail and a passion for clean, impactful design, I craft logos, brand
+          systems, print collateral, and motion graphics that leave a lasting impression.</p>
+        <p class="about-desc">My primary toolkit is <strong>Adobe Illustrator</strong> for all vector design work — from
+          minimalist marks to complex mascot logos — and <strong>After Effects</strong> for bringing logos to life
+          through smooth, cinematic animations.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Logo Design</span>
+          <span class="skill-tag">Brand Identity</span>
+          <span class="skill-tag">Print Design</span>
+          <span class="skill-tag">Motion Graphics</span>
+          <span class="skill-tag">Social Media</span>
+          <span class="skill-tag">Packaging</span>
+        </div>
+      </div>
+      <div class="about-visual reveal-right">
+        <div class="about-card-stack">
+          <div class="about-stack-card s1">
+            <img src="Logos/Falcoon Textile Logo Final 1.2 copy 4@4x-100.jpg" alt="Falcon Textile Logo"
+              loading="lazy" />
+          </div>
+          <div class="about-stack-card s2">
+            <img src="Logos/Wise Academy Logo@4x-100.jpg" alt="Wise Academy Logo" loading="lazy" />
+          </div>
+          <div class="about-stack-card s3">
+            <img src="Logos/Global Access Logo@4x-100.jpg" alt="Global Access Logo" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section class="portfolio-section" id="portfolio">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <p class="section-label">Portfolio</p>
+        <h2 class="section-title">Selected <span class="gradient-text">Works</span></h2>
+        <p class="section-desc">Hover over any card to explore the work. Click to view full size.</p>
+      </div>
+
+      <!-- FILTER TABS -->
+      <div class="filter-tabs reveal-up">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="logos">Logos</button>
+        <button class="filter-btn" data-filter="branding">Branding</button>
+        <button class="filter-btn" data-filter="print">Print &amp; Flex</button>
+        <button class="filter-btn" data-filter="social">Social Media</button>
+        <button class="filter-btn" data-filter="packaging">Packaging</button>
+      </div>
+
+      <!-- GRID -->
+      <div class="portfolio-grid" id="portfolioGrid"></div>
+    </div>
+  </section>
+
+  <!-- MOTION SECTION -->
+  <section class="motion-section" id="motion">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <p class="section-label">Motion Graphics</p>
+        <h2 class="section-title">Logos That <span class="gradient-text">Move</span></h2>
+        <p class="section-desc">Crafted in Adobe After Effects — bringing brands to life with smooth, cinematic
+          animations.</p>
+      </div>
+      <div class="motion-grid" id="motionGrid"></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="contact-blob"></div>
+    <div class="container contact-inner">
+      <div class="reveal-up">
+        <p class="section-label">Get In Touch</p>
+        <h2 class="section-title contact-title">Ready to Build<br /><span class="gradient-text">Your Brand?</span></h2>
+        <p class="contact-desc">Let's collaborate on your next big project — from a compelling logo to a full brand
+          system or an animated identity.</p>
+        <div class="contact-actions">
+          <a href="mailto:tadian@example.com" class="btn btn-primary btn-lg">Start a Project</a>
+          <div class="contact-socials">
+            <span class="social-label">Find me on</span>
+            <a href="#" class="social-link">Behance</a>
+            <a href="#" class="social-link">Instagram</a>
+            <a href="#" class="social-link">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">Designer</div>
+      <p class="footer-copy">© 2026 Tadian Ahmad Azeemi. All rights reserved.</p>
+      <p class="footer-made">Made with passion & pixels.</p>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <button class="lightbox-close" id="lightboxClose">✕</button>
+    <div class="lightbox-content">
+      <img src="" alt="" id="lightboxImg" />
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
