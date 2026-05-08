@@ -97,14 +97,14 @@ heroTL
   .from('.hero-title-line', { y: 120, opacity: 0, stagger: .15, duration: 1, ease: 'expo.out' }, .5)
   .from('#heroSub', { y: 30, opacity: 0, duration: .8 }, 1.1)
   .from('#heroActions', { y: 20, opacity: 0, duration: .7 }, 1.4)
-  .from('.float-icon', { 
-    scale: 0, 
+  .to('#softwareStack', { y: 0, opacity: 1, duration: 0.8 }, 1.6)
+  .from('.stack-icon-item', { 
+    scale: 0.8, 
     opacity: 0, 
-    rotation: -20,
     stagger: 0.1, 
-    duration: 0.8, 
+    duration: 0.6, 
     ease: 'back.out(1.7)' 
-  }, 1.6);
+  }, 1.8);
 
 /* ── Enhanced Stat Counters + Ring Animation ── */
 
