@@ -3,6 +3,12 @@
    app.js — GSAP Scroll Animations + Interactions
 =================================================== */
 
+// Force scroll to top on reload
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
+
 gsap.registerPlugin(ScrollTrigger);
 
 /* ── Portfolio Data ── */
@@ -93,18 +99,10 @@ document.querySelectorAll('a, button, .portfolio-card, .motion-card, .filter-btn
 /* ── Hero Animation ── */
 const heroTL = gsap.timeline({ defaults: { ease: 'power3.out' } });
 heroTL
-  .to('#heroBadge', { opacity: 1, y: 0, duration: .8 }, .2)
-  .from('.hero-title-line', { y: 120, opacity: 0, stagger: .15, duration: 1, ease: 'expo.out' }, .5)
-  .from('#heroSub', { y: 30, opacity: 0, duration: .8 }, 1.1)
-  .from('#heroActions', { y: 20, opacity: 0, duration: .7 }, 1.4)
-  .to('#softwareStack', { y: 0, opacity: 1, duration: 0.8 }, 1.6)
-  .from('.stack-icon-item', { 
-    scale: 0.8, 
-    opacity: 0, 
-    stagger: 0.1, 
-    duration: 0.6, 
-    ease: 'back.out(1.7)' 
-  }, 1.8);
+  .to('#heroBadge', { opacity: 1, y: 0, duration: .6 }, .1)
+  .from('.hero-title-line', { y: 80, opacity: 0, stagger: .1, duration: .7, ease: 'expo.out' }, .3)
+  .from('#heroSub', { y: 20, opacity: 0, duration: .6 }, .8)
+  .from('#heroActions', { y: 15, opacity: 0, duration: .5 }, 1.1);
 
 /* ── Enhanced Stat Counters + Ring Animation ── */
 
@@ -135,6 +133,8 @@ document.querySelectorAll('.stat-card').forEach(card => {
     onEnter: () => {
       // Animate ring stroke
       const offset = circumference - (circumference * percent / 100);
+      ring.style.transition = 'stroke-dashoffset 0.8s cubic-bezier(.4,0,.2,1)';
+      barFill.style.transition = 'width 0.8s cubic-bezier(.4,0,.2,1)';
       ring.style.strokeDashoffset = offset;
       ring.classList.add('animated');
 
@@ -161,12 +161,12 @@ document.querySelectorAll('.stat-card').forEach(card => {
 
 /* ── Generic Reveal Animations ── */
 function revealOnScroll(selector, extra = {}) {
-  document.querySelectorAll(selector).forEach((el, i) => {
+  document.querySelectorAll(selector).forEach((el) => {
     gsap.to(el, {
-      opacity: 1, x: 0, y: 0, duration: .9,
-      ease: 'power3.out', delay: i * .12,
+      opacity: 1, x: 0, y: 0, duration: .4, /* Even faster duration */
+      ease: 'power2.out',
       ...extra,
-      scrollTrigger: { trigger: el, start: 'top 88%', once: true,
+      scrollTrigger: { trigger: el, start: 'top 100%', once: true, /* Trigger as soon as it touches the bottom */
         onEnter: () => el.classList.add('revealed') }
     });
   });
@@ -180,12 +180,12 @@ const grid = document.getElementById('portfolioGrid');
 
 portfolioItems.forEach((item, i) => {
   const card = document.createElement('div');
-  card.className = 'portfolio-card reveal-up';
+  card.className = 'portfolio-card';
   card.dataset.category = item.category;
-  card.style.transitionDelay = `${(i % 3) * 0.08}s`;
+  card.style.opacity = '0'; /* Set to 0 so GSAP can fade it in */
   card.innerHTML = `
     <div class="card-img-wrap">
-      <img src="${item.image}" alt="${item.title}" loading="lazy" />
+      <img src="${item.image}" alt="${item.title}" loading="lazy" decoding="async" />
       <div class="card-overlay">
         <p class="card-overlay-text">${item.desc}</p>
       </div>
@@ -200,10 +200,22 @@ portfolioItems.forEach((item, i) => {
 });
 
 /* Stagger reveal for portfolio cards */
-gsap.from('.portfolio-card', {
-  opacity: 0, y: 60, stagger: .07, duration: .8, ease: 'power3.out',
-  scrollTrigger: { trigger: '#portfolioGrid', start: 'top 80%', once: true }
-});
+gsap.fromTo('.portfolio-card', 
+  { opacity: 0, y: 20 }, 
+  { 
+    opacity: 1, 
+    y: 0, 
+    stagger: 0.05, 
+    duration: 0.5, 
+    ease: 'power2.out',
+    scrollTrigger: {
+      trigger: '#portfolioGrid',
+      start: 'top 95%',
+      toggleActions: 'play none none none',
+      once: true
+    }
+  }
+);
 
 /* ── Filter Tabs ── */
 document.querySelectorAll('.filter-btn').forEach(btn => {

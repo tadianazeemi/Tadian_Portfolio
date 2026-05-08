@@ -143,7 +143,7 @@ body {
   font-size: .95rem;
   font-weight: 600;
   text-decoration: none;
-  transition: all .3s var(--ease);
+  transition: all .2s var(--ease);
   cursor: pointer;
   border: none;
 }
@@ -217,7 +217,7 @@ nav {
   font-size: .9rem;
   font-weight: 500;
   letter-spacing: .01em;
-  transition: color .3s;
+  transition: color .2s;
 }
 
 .nav-links a:hover {
@@ -415,60 +415,7 @@ nav {
   letter-spacing: .06em;
 }
 
-/* SOFTWARE STACK */
-.software-stack {
-  margin-top: 4rem;
-  opacity: 0;
-  transform: translateY(20px);
-}
-.stack-text {
-  font-size: 0.85rem;
-  color: var(--text-faint);
-  letter-spacing: 0.05em;
-  margin-bottom: 1.2rem;
-  text-transform: uppercase;
-  font-weight: 600;
-}
-.stack-icons {
-  display: flex;
-  gap: 1.2rem;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.stack-icon-item {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  padding: 10px;
-  border-radius: 12px;
-  backdrop-filter: blur(10px);
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s var(--ease);
-  cursor: pointer;
-}
-.stack-icon-item:hover {
-  transform: translateY(-5px);
-  border-color: var(--violet-light);
-  background: var(--surface2);
-  box-shadow: 0 10px 25px var(--violet-glow);
-}
-.stack-icon-item img {
-  width: 28px;
-  height: 28px;
-  object-fit: contain;
-  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.2));
-}
 
-@keyframes floatOrbit {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  33% { transform: translate(20px, -30px) rotate(5deg); }
-  66% { transform: translate(-15px, 20px) rotate(-5deg); }
-  100% { transform: translate(0, 0) rotate(0deg); }
-}
 
 .scroll-indicator {
   position: absolute;
@@ -538,7 +485,7 @@ nav {
   border-radius: var(--radius-lg);
   position: relative;
   overflow: hidden;
-  transition: transform .4s var(--ease), box-shadow .4s, border-color .4s;
+  transition: transform .25s var(--ease), box-shadow .25s, border-color .25s;
 }
 
 .stat-card:hover {
@@ -890,7 +837,7 @@ nav {
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  transition: transform .4s var(--ease), box-shadow .4s;
+  transition: transform .2s var(--ease), border-color .2s, box-shadow .2s;
 }
 
 .motion-card:hover {
@@ -1042,7 +989,7 @@ nav {
   font-weight: 600;
   color: var(--text-muted);
   text-decoration: none;
-  transition: color .3s;
+  transition: color .2s;
 }
 
 .social-link:hover {
