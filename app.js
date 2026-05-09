@@ -176,9 +176,7 @@ function revealOnScroll(selector, extra = {}) {
     });
   });
 }
-revealOnScroll('.reveal-up');
-revealOnScroll('.reveal-left');
-revealOnScroll('.reveal-right');
+/* revealOnScroll calls moved to the bottom of the file to ensure dynamic content is caught */
 
 /* ── Build Portfolio Cards ── */
 const grid = document.getElementById('portfolioGrid');
@@ -246,7 +244,8 @@ const motionGrid = document.getElementById('motionGrid');
 
 motionItems.forEach(item => {
   const card = document.createElement('div');
-  card.className = 'motion-card reveal-up';
+  card.className = 'motion-card'; /* Removed reveal-up for consistency */
+  card.style.opacity = '0';
   card.innerHTML = `
     <div class="motion-video-wrap">
       <video src="${item.video}" loop muted playsinline preload="none" id="vid-${item.id}"></video>
@@ -375,3 +374,24 @@ document.querySelectorAll('.portfolio-card').forEach(card => {
     gsap.to(card, { rotationX: 0, rotationY: 0, duration: .5, ease: 'power3.out' });
   });
 });
+/* ── Final Initializations ── */
+revealOnScroll('.reveal-up');
+revealOnScroll('.reveal-left');
+revealOnScroll('.reveal-right');
+
+/* Stagger reveal for motion cards */
+gsap.fromTo('.motion-card', 
+  { opacity: 0, y: 20 }, 
+  { 
+    opacity: 1, 
+    y: 0, 
+    stagger: 0.1, 
+    duration: 0.6, 
+    ease: 'power2.out',
+    scrollTrigger: {
+      trigger: '#motionGrid',
+      start: 'top 95%',
+      once: true
+    }
+  }
+);
